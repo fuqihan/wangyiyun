@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.yqritc\android-scalablevideoview\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c97dc8446f6a46da5620f40b3737e162d53c40c2">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.yqritc-android-scalablevideoview-1.0.1_b521244bcdc0a09ae791985482a8c2feb9897eb9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_0ea5209902ea96d95d6561e891859d3c099475dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\wangyiyun\react-native-vector-icons\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b319ff9834bbeb9be394687614eb86892699ea14">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\wangyiyun-react-native-vector-icons-unspecified_2b35a473729e47a2baea23eb1f6926d3142073de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_c64325f78a24c085b700c554244dc03fa6bc6a89.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.0.1_ef7207783aad5bb3ea1ad0db7388472ec6153358.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_a971f67c50848f35eab062a5cec0856f32aa537b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.0.1_84357038416dfe8814aa480a0b72c7b8e79babb0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.0.1_e1e19cebf5a8b6bde7cd840d69a8a14cac61ab69.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_f63c7ab08dbed3c34e0fe0b9b1a691240ffa1bb7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.46.2\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_7f1759d870a2b27d5413c3f10a22a4a8e71d711d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_1efc6a5eb9346389ba0de2f5ee10a5fa311da347.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_273da2ba53aedc2691b5c6c4485ebe7b12b6e634.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_e0c8cd2362d82c698997254dd45a178e1e9d1ab8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.0.1_aab4d323e77bd622b76644394b030d59a27ae784.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_3cde6ad6eac86bde5ce93849a5eb34ad77ad9ce4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_804470fc82f062d7371c71ca940e52d4c658d682.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\wangyiyun\react-native-video\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9dc0e17e2c63aa53eda55c52d13500edc3a35587">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\wangyiyun-react-native-video-unspecified_0571afb2e216e4f99d8ebb279feeafa072f849ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.0.1_382a61a6e6a9b3093007cc37aedd931bce8c440f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.0.1_a9ffb126fd24cee301ae0d00e294f2122f4b4a32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.46.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c5526d30278eb171f4a1325bd6b927c9057c91f4">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.46.2_01e6b88cb06948140deabba3c103625568e0153c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_6ee45b7c8cfe42b4255d398403524d6e3b428624.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_540096aa8cc88936c56b00b67f3c1f5a8259c088.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_0283216b9bf7dad1d31c87f4be8f1ed4e4500cc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\rn\wangyiyun\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="F:\rn\wangyiyun\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_97f90b36c8e4d16ae08f2959c178d9840041d892.jar" />
+    </item>
+
+</items>
