@@ -3,9 +3,6 @@ import React, {Component} from 'react';
 import {Text, Navigator, StyleSheet, View, TouchableOpacity} from 'react-native';
 import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import store from '../store/index.js'
-import { connect } from 'react-redux'
-import { musicUrl } from '../action/actions.js'
 
 class VideoPlayPage extends Component {
     constructor(props) {
@@ -28,7 +25,6 @@ class VideoPlayPage extends Component {
                .then((response) => response.json())
                .then((responseJson) => {
                  let url = responseJson.data[0].url
-                 store.dispatch(musicUrl(this.props.musicId))
                  this.setState({paused: false,isPlay: true,musicUrl: url})
                })
                .catch((error) => {
@@ -45,17 +41,22 @@ class VideoPlayPage extends Component {
       }
     }
     componentWillReceiveProps(nextProps) {
-
+      console.log(nextProps.musicId)
       if(!this.state.isPlay) {
-        this.props.music
         return
       }
-      if(this.props.music !== nextProps.music){
+      if(this.props.musicId !== nextProps.musicId){
         this.stopPause()
-        let url = nextProps.music
-        store.dispatch(musicUrl(url))
-        this.setState({paused: false,isPlay: true,musicUrl: url})
-        console.log( this.props.music)
+        let id = 'http://120.25.240.196:3001/music/url?id='+nextProps.musicId
+        fetch(id)
+             .then((response) => response.json())
+             .then((responseJson) => {
+               let url = responseJson.data[0].url
+               this.setState({paused: false,musicUrl: url})
+             })
+             .catch((error) => {
+               console.error(error);
+             });
       }
     }
     render() {
@@ -96,7 +97,5 @@ class VideoPlayPage extends Component {
 const styles = StyleSheet.create({
 
 });
-const select = (state) => ({
-  music: state.musicUrl
-})
-export default connect(select)(VideoPlayPage)
+
+export default VideoPlayPage

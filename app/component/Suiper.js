@@ -34,7 +34,6 @@ export default class SideBar extends React.Component {
     fetch('http://120.25.240.196:3001/banner')
          .then((response) => response.json())
          .then((responseJson) => {
-           console.log(responseJson.banners)
            this.setState({swImgs: responseJson.banners})
          })
          .catch((error) => {

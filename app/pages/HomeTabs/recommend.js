@@ -7,7 +7,7 @@ export default class recommend extends Component {
           return(
               <ScrollView style={styles.mainStyle}>
                   <Swioer/>
-                  <RadiusButton/>
+                  <RadiusButton navigation={this.props.navigation} />
               </ScrollView>
           );
       }

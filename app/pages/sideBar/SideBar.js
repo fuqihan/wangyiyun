@@ -9,17 +9,31 @@ import {
     Content,
 } from "native-base";
 const routes = ["Home", "Chat", "Profile"];
-export default class SideBar extends React.Component {
+import { connect } from 'react-redux'
+import { loginInfo } from '../../action/actions.js'
+class SideBar extends React.Component {
     render() {
+      const { dispatch, login } = this.props
+      if(!login.userId){
+        top = <View style={styles.sideLogin}>
+                  <TouchableOpacity style={styles.btnDefaultStyle}
+                   onPress={() => this.props.navigation.navigate("Login")}>
+                      <Text style={{color: 'white'}}>立即登陆</Text>
+                 </TouchableOpacity>
+        </View>
+      }else {
+        top = <View style={styles.sideLogin}>
+        <Image
+        style={styles.userImg}
+        source={{uri: login.backgroundUrl}}
+      />
+              <Text style={{color: 'white'}}>{login.nickname}</Text>
+        </View>
+      }
         return (
             <Container>
                 <Content >
-                  <View style={styles.sideLogin}>
-                            <TouchableOpacity style={styles.btnDefaultStyle}
-                             onPress={() => this.props.navigation.navigate("Login")}>
-                                <Text style={{color: 'white'}}>立即登陆</Text>
-                           </TouchableOpacity>
-                  </View>
+                  {top}
               <View style={styles.sideList}>
               <Text style={styles.sideListText}>我的消息</Text>
 
@@ -85,5 +99,15 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center'
+    },
+    userImg: {
+      width: 100,
+      height: 100,
+      borderRadius: 50,
+      borderWidth: (Platform.OS==='ios' ? 1.0 : 1.5) / PixelRatio.get(),
     }
 });
+const select = (state) => ({
+  login: state.loginInfo
+})
+export default connect(select)(SideBar)

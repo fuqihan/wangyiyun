@@ -8,7 +8,7 @@ import Personal from "../personal/Personal.js";
 import HomeTab from "./child/HomeTab";
 import Dynamic from "../dynamic/Dynamic.js";
 import FacebookTabBar from './child/FacebookTabBar';
-import HomeFooter from './child/HomeFooter';
+import HomeFooter from '../Footer/Footer.js';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import {
     Button,
@@ -26,25 +26,32 @@ import {
     Right
 } from "native-base";
 import Icon from 'react-native-vector-icons/Ionicons';
+import store from '../../store/index.js'
+import { fooderMusic } from '../../action/actions.js'
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {playMusic: ''}
 }
   componentDidMount() {
-    fetch('http://120.25.240.196:3001/song/detail?ids=347230')
-         .then((response) => response.json())
-         .then((responseJson) => {
-           this.setState({playMusic: {
-             name: responseJson.songs[0].name,
-             ar: responseJson.songs[0].ar[0].name,
-             al:  responseJson.songs[0].al.picUrl,
-             id:  responseJson.songs[0].id,
-           }})
-         })
-         .catch((error) => {
-           console.error(error);
-         });
+    if(!store.getState().fooderMusic.id){
+      fetch('http://120.25.240.196:3001/song/detail?ids=347230')
+           .then((response) => response.json())
+           .then((responseJson) => {
+
+             let data = {
+               name: responseJson.songs[0].name,
+               ar: responseJson.songs[0].ar[0].name,
+               al:  responseJson.songs[0].al.picUrl,
+               id:  responseJson.songs[0].id,
+             }
+             store.dispatch(fooderMusic(data))
+           })
+           .catch((error) => {
+             console.error(error);
+           });
+    }
+
   }
     render() {
         return (  <Container style={{position: 'relative'}}>
@@ -58,7 +65,7 @@ class HomeScreen extends Component {
                         <Personal/>
                     </ScrollView>
                     <ScrollView tabLabel="ios-home" style={styles.tabView}>
-                        <HomeTab/>
+                        <HomeTab navigation={this.props.navigation} />
                     </ScrollView>
                     <ScrollView tabLabel="md-people" style={styles.tabView}>
                         <Dynamic/>

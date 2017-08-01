@@ -29,7 +29,7 @@ export default class One extends Component {
         <Tabs initialPage={0}  style={{height: 32}}>
           <Tab heading="个性推荐" tabStyle={styles.tab} activeTabStyle={styles.tab}
            textStyle={styles.textStyle} activeTextStyle={styles.activeTextStyle}>
-            <Recommend />
+            <Recommend navigation={this.props.navigation} />
           </Tab>
           <Tab heading="歌单" tabStyle={styles.tab} activeTabStyle={styles.tab}
            textStyle={styles.textStyle} activeTextStyle={styles.activeTextStyle}>

@@ -6,6 +6,7 @@ import HomeScreen from "../pages/home/HomeScreen.js";
 import MusicView from "../pages/musicView/MusicView";
 import Search from "../pages/search/Search";
 import Login from '../pages/login/login.js'
+import MusicList from '../pages/musicList/MusicList.js'
 import SideBar from "../pages/sideBar/SideBar.js";
 import { DrawerNavigator } from "react-navigation";
 const Router = DrawerNavigator(
@@ -14,6 +15,7 @@ const Router = DrawerNavigator(
         MusicView: { screen: MusicView },
         Search: { screen: Search },
         Login: { screen: Login },
+        MusicList: { screen: MusicList },
     },
     {
         contentComponent: props => <SideBar {...props} />
