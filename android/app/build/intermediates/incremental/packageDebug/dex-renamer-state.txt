@@ -1,4 +1,4 @@
-#Sat Jul 29 16:00:28 CST 2017
+#Wed Aug 02 15:28:11 CST 2017
 base.0=F\:\\rn\\wangyiyun\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=F\:\\rn\\wangyiyun\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

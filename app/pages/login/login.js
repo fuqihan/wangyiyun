@@ -4,6 +4,9 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, For
 import store from '../../store/index.js'
 import { loginInfo } from '../../action/actions.js'
 export default class login extends Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
   constructor(props) {
       super(props)
       this.state = {

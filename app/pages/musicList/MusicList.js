@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View,Text,StyleSheet,Dimensions, ScrollView, Platform, PixelRatio, Image, TouchableOpacity } from "react-native";
 import { Container, Header, Left, Body, Right,Icon, Button, Title } from 'native-base';
-import Footer from '../Footer/Footer.js'
 import store from '../../store/index.js'
 import { fooderMusic } from '../../action/actions.js'
 export default class musicList extends Component {
@@ -70,7 +69,6 @@ export default class musicList extends Component {
           </TouchableOpacity>;
       })}
       </ScrollView>
-      <Footer/>
     </Container>
 
         );

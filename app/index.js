@@ -6,6 +6,7 @@ import {AppRegistry} from "react-native";
  import Router  from "./router/index";
  import { Provider } from 'react-redux'
  import store from './store/index.js'
+
 class InitApp extends Component {
     render() {
         return  <Provider store={store}>

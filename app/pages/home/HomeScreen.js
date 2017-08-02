@@ -26,33 +26,9 @@ import {
     Right
 } from "native-base";
 import Icon from 'react-native-vector-icons/Ionicons';
-import store from '../../store/index.js'
-import { fooderMusic } from '../../action/actions.js'
+
 class HomeScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {playMusic: ''}
-}
-  componentDidMount() {
-    if(!store.getState().fooderMusic.id){
-      fetch('http://120.25.240.196:3001/song/detail?ids=347230')
-           .then((response) => response.json())
-           .then((responseJson) => {
 
-             let data = {
-               name: responseJson.songs[0].name,
-               ar: responseJson.songs[0].ar[0].name,
-               al:  responseJson.songs[0].al.picUrl,
-               id:  responseJson.songs[0].id,
-             }
-             store.dispatch(fooderMusic(data))
-           })
-           .catch((error) => {
-             console.error(error);
-           });
-    }
-
-  }
     render() {
         return (  <Container style={{position: 'relative'}}>
                 {/*中间三个导航*/}
@@ -76,7 +52,7 @@ class HomeScreen extends Component {
                 top: 0,backgroundColor: '#EE2C2C',
                 left: 0,}}
                     transparent
-                    onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+                    onPress={() => this.props.screenProps.navigate("DrawerOpen")}>
                 <Icon name="ios-menu" size={30} color="#FFFFFF" />
             </Button>
             {/*右侧搜索*/}
@@ -87,8 +63,7 @@ class HomeScreen extends Component {
                     onPress={() => this.props.navigation.navigate("Search")}>
                 <Icon name="ios-search" size={30} color="#FFFFFF" />
             </Button>
-            {/*底部音乐*/}
-            <HomeFooter playMusic={this.state.playMusic} navigation={this.props.navigation} />
+
         </Container> )
     }
 };

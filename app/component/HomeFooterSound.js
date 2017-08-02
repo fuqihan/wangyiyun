@@ -83,7 +83,7 @@ class VideoPlayPage extends Component {
                        paused={this.state.paused}                 // Pauses playback entirely.
                        resizeMode="contain"             // Fill the whole screen at aspect ratio.
                        repeat={false}                  // Repeat forever.
-                       playInBackground={false}       // Audio continues to play when app entering background.
+                       playInBackground={true}       // Audio continues to play when app entering background.
                        playWhenInactive={false}       // [iOS] Video continues to play when control or notification center are shown.
                        progressUpdateInterval={250.0} // [iOS] Interval to fire onProgress (default to ~250ms)
                        />
