@@ -16,8 +16,7 @@ export default class musicList extends Component {
            .then((response) => response.json())
            .then((res) => {
              let songs = res.result.tracks
-				// 取前20首
-				    songs.length = 20
+				
 				    this.setState({
 					     itemList: songs
 				    })

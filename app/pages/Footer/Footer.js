@@ -5,6 +5,7 @@ import {
     ScrollView,
     View,
     Image,
+    TouchableOpacity,
 } from 'react-native';
 import {
     Button,
@@ -32,7 +33,12 @@ class HomeFooter extends Component {
       const { dispatch, music } = this.props
     return ( <Footer style={styles.footer}>
         <FooterTab>
-            <View style={styles.footerLeft}>
+            <TouchableOpacity style={styles.footerLeft}
+             onPress={() => this.props.navigation.navigate("SongInfo",{info:{
+               name: music.name,
+               ar: music.ar,
+               id: music.id
+             }})}>
                 <Image
                     source={{
                         uri: music.al
@@ -52,7 +58,7 @@ class HomeFooter extends Component {
                     fontSize: 12,position: 'absolute',
                     top: 24,
                     left: 53}}>{music.ar}</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.footerRight}>
                 <HomeFooterSound musicId={music.id}/>
                 <ModalList/>

@@ -48,7 +48,7 @@ export default class SideBar extends React.Component {
         </Content>
       </Container>
     } else {
-      console.log(this.state.swImgs[0].pic)
+    
 
       return (<Swiper style={styles.swiper} height={135}
         width={Dimensions.get('window').width} showsButtons autoplay autoplayTimeout={20}>

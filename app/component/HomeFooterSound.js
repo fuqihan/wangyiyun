@@ -41,7 +41,7 @@ class VideoPlayPage extends Component {
       }
     }
     componentWillReceiveProps(nextProps) {
-      console.log(nextProps.musicId)
+      
       if(!this.state.isPlay) {
         return
       }

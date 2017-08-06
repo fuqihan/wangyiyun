@@ -10,6 +10,7 @@ import Login from '../pages/login/login.js'
 import MusicList from '../pages/musicList/MusicList.js'
 import SideBar from "../pages/sideBar/SideBar.js";
  import Fooder from '../pages/Footer/Footer.js'
+ import SongInfo from '../pages/songInfo/SongInfo.js'
  import store from '../store/index.js'
  import { fooderMusic } from '../action/actions.js'
 import { DrawerNavigator, StackNavigator  } from "react-navigation";
@@ -55,7 +56,7 @@ class InitApp extends Component {
       const navigate = '123'
         return <View style={{flex: 1}}>
           <SimpleApp screenProps={this.props.navigation} />
-          <Fooder music={this.state.playMusic}  />
+          <Fooder music={this.state.playMusic} navigation={this.props.navigation} />
   </View>
     }
 }
@@ -63,6 +64,7 @@ const Router = DrawerNavigator(
     {
         Home: { screen: InitApp },
         Login:  { screen: Login },
+        SongInfo:  { screen: SongInfo },
     },
     {
         contentComponent: props => <SideBar {...props} />
