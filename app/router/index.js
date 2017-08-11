@@ -4,10 +4,10 @@
 import React, { Component } from "react";
 import {View} from "react-native";
 import HomeScreen from "../pages/home/HomeScreen.js";
-import MusicView from "../pages/musicView/MusicView";
 import Search from "../pages/search/Search";
 import Login from '../pages/login/login.js'
-import MusicList from '../pages/musicList/MusicList.js'
+import IconSongList from '../pages/songList/iconSongList.js'
+import HighqualityList from '../pages/songList/highqualityList.js'
 import SideBar from "../pages/sideBar/SideBar.js";
  import Fooder from '../pages/Footer/Footer.js'
  import SongInfo from '../pages/songInfo/SongInfo.js'
@@ -16,9 +16,9 @@ import SideBar from "../pages/sideBar/SideBar.js";
 import { DrawerNavigator, StackNavigator  } from "react-navigation";
 const SimpleApp = StackNavigator({
   Home: { screen: HomeScreen, },
-  MusicView: { screen: MusicView },
   Search: { screen: Search },
-  MusicList: { screen: MusicList },
+  IconSongList: { screen: IconSongList },
+  HighqualityList: { screen: HighqualityList },
 },
 {
   navigationOptions: {
@@ -31,7 +31,7 @@ class InitApp extends Component {
     super(props);
     this.state = {playMusic: ''}
 }
-  componentDidMount() {
+  componentWillMount() {
     if(!store.getState().fooderMusic.id){
       fetch('http://120.25.240.196:3001/song/detail?ids=347230')
            .then((response) => response.json())
@@ -42,6 +42,7 @@ class InitApp extends Component {
                ar: responseJson.songs[0].ar[0].name,
                al:  responseJson.songs[0].al.picUrl,
                id:  responseJson.songs[0].id,
+               index: 0,
              }
              store.dispatch(fooderMusic(data))
            })

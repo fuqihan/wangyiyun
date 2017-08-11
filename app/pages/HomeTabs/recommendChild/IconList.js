@@ -8,7 +8,7 @@ import { loginInfo } from '../../../action/actions.js'
     if(!login.userId){
       alert('请先登录')
     } else {
-      this.props.navigation.navigate("MusicList",{ head: head,url: '/personal_fm'})
+      this.props.navigation.navigate("IconSongList",{ head: head})
     }
   }
 
@@ -45,6 +45,8 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width,
         height: 130,
         flexDirection: 'row',
+        borderBottomColor: '#880000',
+        borderWidth: (Platform.OS==='ios' ? 0.4 : 0.8) / PixelRatio.get(),
     },
     iconListView: {
       flex: 1,
@@ -56,8 +58,8 @@ const styles = StyleSheet.create({
       marginTop: 5,
     },
     btnDefaultStyle: {
-   width: 70,
-   height: 70,
+   width: 50,
+   height: 50,
    borderColor: '#880000',
    borderRadius: 50,
    borderWidth: (Platform.OS==='ios' ? 1.0 : 1.5) / PixelRatio.get(),

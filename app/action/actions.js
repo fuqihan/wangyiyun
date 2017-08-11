@@ -5,6 +5,7 @@
 export const MUSIC_URL = 'MUSIC_URL'
 export const LOGIN_INFO = 'LOGIN_INFO'
 export const FOODER_MUSIC = 'FOODER_MUSIC'
+export const MODAL_SONG_LIST = 'MODAL_SONG_LIST'
 
 /*
  * 其它的常量
@@ -22,4 +23,7 @@ export function loginInfo(info){
 }
 export function fooderMusic(data){
     return { type: FOODER_MUSIC, data }
+}
+export function modalSongList(list){
+    return { type: MODAL_SONG_LIST, list }
 }

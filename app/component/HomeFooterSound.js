@@ -41,11 +41,11 @@ class VideoPlayPage extends Component {
       }
     }
     componentWillReceiveProps(nextProps) {
-      
+
       if(!this.state.isPlay) {
         return
       }
-      if(this.props.musicId !== nextProps.musicId){
+      if(this.props.musicId !== nextProps.musicId ){
         this.stopPause()
         let id = 'http://120.25.240.196:3001/music/url?id='+nextProps.musicId
         fetch(id)
@@ -61,13 +61,14 @@ class VideoPlayPage extends Component {
     }
     render() {
       const { dispatch, music } = this.props
+      let play
 
       if(this.state.paused) {
-        play = <TouchableOpacity style={styles.tab1} onPress={this.playPause}>
+         play = <TouchableOpacity style={styles.tab1} onPress={this.playPause}>
         <Icon name="play-circle-outline" size={30} color="#000000" />
         </TouchableOpacity>
       } else {
-         play = <TouchableOpacity style={styles.tab1} onPress={this.stopPause}>
+          play = <TouchableOpacity style={styles.tab1} onPress={this.stopPause}>
         <Icon name="pause-circle-outline" size={30} color="#8B0000" />
         </TouchableOpacity>
       }

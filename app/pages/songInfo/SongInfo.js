@@ -6,6 +6,9 @@ import Icon from 'react-native-vector-icons/Entypo';
 import MusicSlider from './child/MusicSlider.js'
 import LyricScroll from './child/lyricScroll.js'
 import Header from './child/Header.js'
+import ModalList from '../../component/ModalList.js'
+import { connect } from 'react-redux'
+import { modalSongList,fooderMusic } from '../../action/actions.js'
 
 class VideoPlayPage extends Component {
     constructor(props) {
@@ -29,8 +32,9 @@ class VideoPlayPage extends Component {
         sliderTime: e.currentTime
       })
     }
+    /*render执行后的生命周期*/
    componentWillMount(){
-     let url = 'http://120.25.240.196:3001/music/url?id='+ this.props.navigation.state.params.info.id
+     let url = 'http://120.25.240.196:3001/music/url?id='+ this.props.songPlay.id
      fetch(url)
           .then((response) => response.json())
           .then((responseJson) => {
@@ -41,10 +45,88 @@ class VideoPlayPage extends Component {
             console.error(error);
           });
    }
+   /*监听props的变化*/
+   componentWillReceiveProps(nextProps) {
+
+     if(this.props.songPlay.id !== nextProps.songPlay.id ){
+       this.setState({paused: true})
+       let id = 'http://120.25.240.196:3001/music/url?id='+nextProps.songPlay.id
+       fetch(id)
+            .then((response) => response.json())
+            .then((responseJson) => {
+              let url = responseJson.data[0].url
+              this.setState({paused: false,musicUrl: url})
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+     }
+   }
+  /*下一首*/
+   _playUnder(dispatch,index,songList){
+
+     let id = index+1 == songList.length?0:index+1
+
+     let url = 'http://120.25.240.196:3001/song/detail?ids='+songList[id].al.id
+     let _self = this
+   fetch(url)
+        .then((response) => response.json())
+        .then((responseJson) => {
+          let data = {
+            name: responseJson.songs[0].name,
+            ar: responseJson.songs[0].ar[0].name,
+            al:  responseJson.songs[0].al.picUrl,
+            id:  responseJson.songs[0].id,
+            index: id
+          }
+          dispatch(fooderMusic(data))
+
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+   }
+  /*上一首*/
+  _playUpon(dispatch,index,songList){
+
+    let id = index == 0?songList.length-1:index-1
+
+    let url = 'http://120.25.240.196:3001/song/detail?ids='+songList[id].al.id
+    let _self = this
+  fetch(url)
+       .then((response) => response.json())
+       .then((responseJson) => {
+         let data = {
+           name: responseJson.songs[0].name,
+           ar: responseJson.songs[0].ar[0].name,
+           al:  responseJson.songs[0].al.picUrl,
+           id:  responseJson.songs[0].id,
+           index: id
+         }
+         dispatch(fooderMusic(data))
+
+       })
+       .catch((error) => {
+         console.error(error);
+       });
+  }
 
     render() {
 
-      const { info } = this.props.navigation.state.params
+      const { dispatch, songList, songPlay } = this.props
+
+      let play
+      if(!this.state.paused) {
+         play =  <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}
+         onPress={()=>{this.setState({paused: true})}}>
+            <Icon name="controller-paus" size={30} color="#000000" />
+          </TouchableOpacity>
+      } else {
+          play =  <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}
+          onPress={()=>{this.setState({paused: false})}}>
+             <Icon name="controller-play" size={30} color="#000000" />
+           </TouchableOpacity>
+      }
 
         return (
             <View style={{flex: 1}}>
@@ -65,9 +147,9 @@ class VideoPlayPage extends Component {
                        onProgress={(e) => this.onProgress(e)}
                        />
 
-                        <Header navigation={this.props.navigation} name={info.name} ar={info.ar}  />
+                        <Header navigation={this.props.navigation} name={songPlay.name} ar={songPlay.ar}  />
 
-                      <LyricScroll sliderTime={this.state.sliderTime} id={info.id}/>
+                      <LyricScroll sliderTime={this.state.sliderTime} id={songPlay.id}/>
                      <MusicSlider sliderValue={this.state.sliderValue} sliderTime={this.state.sliderTime}/>
                      <View style={styles.songBottom}>
                      <View style={styles.songBottomLeft}>
@@ -76,20 +158,18 @@ class VideoPlayPage extends Component {
                      </TouchableOpacity>
                      </View>
                      <View style={styles.songBottomConter}>
-                     <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>
+                     <TouchableOpacity onPress={this._playUpon.bind(this,dispatch,songPlay.index,songList)}
+                      style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>
                        <Icon name="controller-jump-to-start" size={30} color="#000000" />
                      </TouchableOpacity>
-                     <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>
-                       <Icon name="controller-paus" size={30} color="#000000" />
-                     </TouchableOpacity>
-                     <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>
+                     {play}
+                     <TouchableOpacity onPress={this._playUnder.bind(this,dispatch,songPlay.index,songList)}
+                     style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>
                        <Icon name="controller-next" size={30} color="#000000" />
                      </TouchableOpacity>
                      </View>
                      <View style={styles.songBottomRight}>
-                     <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>
-                       <Icon name="menu" size={30} color="#000000" />
-                     </TouchableOpacity>
+                     <ModalList/>
                      </View>
                      </View>
 
@@ -112,8 +192,14 @@ const styles = StyleSheet.create({
    flexDirection: 'row',
  },
  songBottomRight:{
-   flex: 1
+   flex: 1,
+  marginTop: 15,
+   alignItems: 'center',
+   justifyContent: 'center'
  }
 });
-
-export default VideoPlayPage
+const select = (state) => ({
+  songList: state.modalSongList,
+  songPlay: state.fooderMusic,
+})
+export default connect(select)(VideoPlayPage)

@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
-import { MUSIC_URL,LOGIN_INFO, FOODER_MUSIC } from '../action/actions.js'
+import { MUSIC_URL,LOGIN_INFO, FOODER_MUSIC,MODAL_SONG_LIST } from '../action/actions.js'
 let fooderMusicState = {
   name: '',
   ar: '',
   al: '',
   id:  '',
+  index: '',
 }
 
 function musicUrl(state = '', action) {
@@ -34,11 +35,21 @@ function fooderMusic(state = fooderMusicState, action){
   }
 }
 
+function modalSongList(state = [], action){
+  switch (action.type) {
+    case MODAL_SONG_LIST:
+      return action.list
+    default:
+      return state
+  }
+}
+
 
 const todoApp = combineReducers({
   musicUrl,
   loginInfo,
-  fooderMusic
+  fooderMusic,
+  modalSongList
 })
 
 export default todoApp
