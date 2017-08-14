@@ -27,7 +27,7 @@ class VideoPlayPage extends Component {
   </View>
   <View style={styles.headerCenter}>
   <View style={{height: 50,justifyContent: 'center',alignItems: 'center'}}>
-  <Text style={{fontSize: 18}}>{this.props.name}</Text>
+  <Text style={{fontSize: 18}} numberOfLines={1}>{this.props.name}</Text>
   <Text style={{fontSize: 12}}>{this.props.ar}</Text>
   </View>
   </View>

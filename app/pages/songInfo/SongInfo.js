@@ -16,7 +16,7 @@ class VideoPlayPage extends Component {
         this.state = {
         musicUrl: '',
         muted: false,
-        currentTime: 320000,
+        currentTime: '',
         paused: false,
         sliderValue: 0,
         sliderTime: 0,
@@ -24,9 +24,10 @@ class VideoPlayPage extends Component {
       }
 
     }
+    /* video 每250ms运行一次 */
     onProgress(e) {
 
-      let value = e.currentTime*1000/320000
+      let value = e.currentTime*1000/this.state.currentTime
       this.setState({
         sliderValue: value,
         sliderTime: e.currentTime
@@ -39,7 +40,7 @@ class VideoPlayPage extends Component {
           .then((response) => response.json())
           .then((responseJson) => {
             let url = responseJson.data[0].url
-            this.setState({musicUrl: url})
+            this.setState({musicUrl: url,currentTime: responseJson.data[0].br})
           })
           .catch((error) => {
             console.error(error);
@@ -55,7 +56,7 @@ class VideoPlayPage extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
               let url = responseJson.data[0].url
-              this.setState({paused: false,musicUrl: url})
+              this.setState({paused: false,musicUrl: url,currentTime: responseJson.data[0].br})
             })
             .catch((error) => {
               console.error(error);
@@ -67,7 +68,8 @@ class VideoPlayPage extends Component {
 
      let id = index+1 == songList.length?0:index+1
 
-     let url = 'http://120.25.240.196:3001/song/detail?ids='+songList[id].al.id
+     let url = 'http://120.25.240.196:3001/song/detail?ids='+songList[id].id
+
      let _self = this
    fetch(url)
         .then((response) => response.json())
@@ -91,7 +93,7 @@ class VideoPlayPage extends Component {
 
     let id = index == 0?songList.length-1:index-1
 
-    let url = 'http://120.25.240.196:3001/song/detail?ids='+songList[id].al.id
+    let url = 'http://120.25.240.196:3001/song/detail?ids='+songList[id].id
     let _self = this
   fetch(url)
        .then((response) => response.json())
@@ -150,7 +152,7 @@ class VideoPlayPage extends Component {
                         <Header navigation={this.props.navigation} name={songPlay.name} ar={songPlay.ar}  />
 
                       <LyricScroll sliderTime={this.state.sliderTime} id={songPlay.id}/>
-                     <MusicSlider sliderValue={this.state.sliderValue} sliderTime={this.state.sliderTime}/>
+                     <MusicSlider sliderValue={this.state.sliderValue} sliderTime={this.state.sliderTime} currentTime={this.state.currentTime} />
                      <View style={styles.songBottom}>
                      <View style={styles.songBottomLeft}>
                      <TouchableOpacity style={{flex: 1,alignItems: 'center',justifyContent: 'center'}}>

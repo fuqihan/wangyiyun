@@ -52,8 +52,7 @@
 
 # TextLayoutBuilder uses a non-public Android constructor within StaticLayout.
 # See libs/proxy/src/main/java/com/facebook/fbui/textlayoutbuilder/proxy for details.
--keep class android.text {* ;}
--dontwarn android.text.*
+-dontwarn android.text.StaticLayout
 
 # okhttp
 

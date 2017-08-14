@@ -10,13 +10,7 @@ class VideoPlayPage extends Component {
       }
 
     }
-    onProgress(e) {
 
-      let value = e.currentTime*1000/320000
-      this.setState({
-        sliderValue: value
-      })
-    }
 
      //把秒数转换为时间类型
     formatTime(time) {
@@ -37,12 +31,12 @@ class VideoPlayPage extends Component {
      })
    }
     render() {
-
+      const currentTime =  this.props.currentTime
         return (
             <View style={styles.musicSlider}>
               <Text style={styles.sliderText}>{this.formatTime(this.state.sliderTime)}</Text>
               <Slider value={this.state.sliderValue} style={styles.slider}/>
-              <Text style={styles.sliderText}>{this.formatTime(320000/1000)}</Text>
+              <Text style={styles.sliderText}>{this.formatTime(currentTime/1000)}</Text>
             </View>
         )
     }

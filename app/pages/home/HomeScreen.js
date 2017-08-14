@@ -60,7 +60,7 @@ class HomeScreen extends Component {
                 top: 0,backgroundColor: '#EE2C2C',
                 right: 0,}}
                     transparent
-                    onPress={() => this.props.screenProps.navigate("SongInfo")}>
+                    onPress={() => this.props.navigation.navigate("Search")}>
                 <Icon name="ios-search" size={30} color="#FFFFFF" />
             </Button>
 

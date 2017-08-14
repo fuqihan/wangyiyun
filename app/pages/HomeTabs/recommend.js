@@ -7,7 +7,7 @@ export default class recommend extends Component {
       render(){
           return(
               <ScrollView style={styles.mainStyle}>
-                  <Swioer/>
+                <Swioer/> 
                   <RadiusButton navigation={this.props.navigation} />
                   <Highquality navigation={this.props.navigation} />
               </ScrollView>

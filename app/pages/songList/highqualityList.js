@@ -68,8 +68,8 @@ export default class highqualityList extends Component {
       <ScrollView style={styles.ScrollView}>
       {this.state.itemList.map((tab, i) => {
           return <TouchableOpacity key={i} style={styles.itemList} onPress={this._itemPlay.bind(this,tab.id,i)}>
-              <Text style={{position: 'absolute', top: 5, left: 20,fontSize: 18}}>{tab.name}</Text>
-              <Text style={{position: 'absolute', top: 32, left: 20, fontSize: 16}}>{tab.ar[0].name}</Text>
+              <Text style={{position: 'absolute', top: 5, left: 20,fontSize: 18}}  numberOfLines={1}>{tab.name}</Text>
+              <Text style={{position: 'absolute', top: 32, left: 20, fontSize: 16}}  numberOfLines={1}>{tab.ar[0].name}</Text>
           </TouchableOpacity>;
       })}
       </ScrollView>

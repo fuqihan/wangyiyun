@@ -35,6 +35,8 @@ class lyricScroll extends Component {
           fetch(url)
                .then((response) => response.json())
                .then((responseJson) => {
+                 y=0
+                  this.refs.scroll.scrollTo({x: 0, y: 0, animated: true})
                  let lryAry = responseJson.lrc.lyric.split('\n')   //按照换行符切数组
 
                          lryAry.forEach(function (val, index) {
